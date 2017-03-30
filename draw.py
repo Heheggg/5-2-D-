@@ -1,22 +1,29 @@
 from display import *
 from matrix import *
 from math import *
-from decimal import *
 
 def add_box( points, x, y, z, width, height, depth ):
-    
-    pass
+    x2 = x + width
+    y2 = y - height
+    z2 = z - depth
+
+    add_edge(points,x,y,z,x,y,z)
+    add_edge(points,x2, y,z,x2,y,z)
+    add_edge(points,x2, y2,z,x2,y2 ,z)
+    add_edge(points,x, y2,z,x,y2,z)
+    add_edge(points,x, y,x2,x,y,x2)
+    add_edge(points,x2, y,x2,x2,y,x2)
+    add_edge(points,x2, y2,z2,x2,y2,z2)
+    add_edge(points,x, y2,z2,x,y2,z2)
 
 def add_sphere( points, cx, cy, cz, r, step ):
     generate_sphere(points, cx, cy, cz, r, step);
-    
-    pass
 
 def generate_sphere( points, cx, cy, cz, r, step ):
     pass
 
 def add_torus( points, cx, cy, cz, r0, r1, step ):
-    pass
+    generate_torus(points,cx,cy,cz,r0,r1,step)
 
 def generate_torus( points, cx, cy, cz, r0, r1, step ):
     pass
